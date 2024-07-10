@@ -103,31 +103,31 @@ function weatherDetails(info){
         }
         
         if (id == 800) {
-            wIcon.src = "/sun.gif"; // Sunny
+            wIcon.src = "./sun.gif"; // Sunny
         } else if (id >= 200 && id <= 232) {
-            wIcon.src = "/wind-power.gif"; // Thunderstorm
+            wIcon.src = "./wind-power.gif"; // Thunderstorm
         } else if (id >= 600 && id <= 622) {
-            wIcon.src = "/snow.gif"; // Snow
+            wIcon.src = "./snow.gif"; // Snow
         } else if (id >= 701 && id <= 781) {
-            wIcon.src = "/foggy.gif"; // Fog, Mist, etc.
+            wIcon.src = "./foggy.gif"; // Fog, Mist, etc.
         } else if (id >= 801 && id <= 804) {
             if (id == 801) {
-                wIcon.src = "/clouds.gif"; // Partially Sunny
+                wIcon.src = "./clouds.gif"; // Partially Sunny
             } else if (id == 802) {
-                wIcon.src = "/partial-cloudy.gif"; // Partly Cloudy
+                wIcon.src = "./partial-cloudy.gif"; // Partly Cloudy
             } else if (id == 803 || id == 804) {
-                wIcon.src = "/clouds.gif"; // Cloudy / Overcast
+                wIcon.src = "./clouds.gif"; // Cloudy / Overcast
             }
         } else if ((id >= 500 && id <= 531) || (id >= 300 && id <= 321)) {
-            wIcon.src = "/rain.gif"; // Rain
+            wIcon.src = "./rain.gif"; // Rain
         } else if (id == 802) {
-            wIcon.src = "/partial-cloudy.gif"; // Sunshine (assuming it means sunny intervals)
+            wIcon.src = "./partial-cloudy.gif"; // Sunshine (assuming it means sunny intervals)
         } else if (id >= 905 && id <= 905) {
-            wIcon.src = "/wind.gif"; // Windy
+            wIcon.src = "./wind.gif"; // Windy
         } else if (id == 906) {
-            wIcon.src = "/hailstones.gif"; // Hail
+            wIcon.src = "./hailstones.gif"; // Hail
         } else {
-            wIcon.src = "/default.png"; // Default icon for undefined weather conditions
+            wIcon.src = "./default.png"; // Default icon for undefined weather conditions
         }
 
         currentTemp = temp;

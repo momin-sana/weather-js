@@ -1,0 +1,347 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Calibri';
+}
+
+a{
+  color: black;
+  font-family: 'Calibri';
+  font-size: 15px;
+  position: relative; 
+  bottom: -470px;
+  right: -1000px;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0c5460;
+}
+
+#weatherBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+::selection{
+  color: #fff;
+  background: #0c5460;
+}
+
+.wrapper {
+  width: 400px;
+  background: #fff;
+  border-radius: 7px;
+  border: 2mm ridge #209db39e;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.334);
+  transition: box-shadow 0.3s ease;
+}
+
+.wrapper:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.wrapper header{
+  display: flex;
+  font-size: 21px;
+  font-weight: bolder;
+  color: #0c5460;
+  padding: 16px 15px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+header i{
+  font-size: 0em;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.wrapper.active header i{
+  margin-left: 5px;
+  font-size: 30px;
+}
+
+.wrapper .input-part{
+  margin: 20px 25px 30px;
+}
+
+.wrapper.active .input-part{
+  display: none;
+}
+
+.input-part .info-txt{
+  display: none;
+  font-size: 17px;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+
+.input-part .info-txt.error{
+  color: #721c24;
+  display: block;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.input-part .info-txt.pending{
+  color: #0c5460;
+  display: block;
+  background: #d1ecf1;
+  border: 1px solid #bee5eb;
+}
+
+.input-part :where(input, button){
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 7px;
+}
+
+.input-part input{
+  text-align: center;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+}
+
+.input-part input:is(:focus, :valid){
+  border: 2px solid #0c5460;
+}
+
+.input-part input::placeholder{
+  color: #bfbfbf;
+}
+
+.input-part .separator{
+  height: 1px;
+  width: 100%;
+  margin: 25px 0;
+  background: #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator::before{
+  content: "or";
+  color: #b3b3b3;
+  font-size: 19px;
+  padding: 0 15px;
+  background: #fff;
+}
+
+.input-part button{
+  color: #fff;
+  cursor: pointer;
+  background: #0c5460;
+  transition: 0.3s ease;
+}
+
+.input-part button:hover{
+  background: #209db39e;
+  color: #000000;
+}
+
+.unit-selection {
+  display: flex;
+  justify-content: top;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  align-self: end;
+  font-size: smaller;
+}
+
+.unit-selection input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+.unit-selection label {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 16px;
+    margin-right: 9px;
+    line-height: 16px;
+  color: #0c5460; /* Default label color */
+}
+
+.unit-selection label::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  border: 2px solid #0c5460;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.unit-selection input[type="radio"]:checked + label::before {
+  background-color: #0c5460;
+  border-color: #0c5460;
+}
+
+.unit-selection label:hover::before {
+  border-color: #000000;
+  text-shadow: #0c5460;
+}
+
+.unit-selection label:hover {
+  text-shadow: #0c5460;
+  font-weight: bolder; 
+}
+
+.wrapper .weather-part{
+  display: none;
+  margin: 30px 0 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wrapper.active .weather-part{
+  display: flex;
+}
+
+.weather-part img{
+  max-width: 125px;
+}
+
+.weather-part .temp{
+  display: flex;
+  font-weight: 500;
+  font-size: 72px;
+}
+
+.weather-part .temp .numb{
+  font-weight: 600;
+}
+
+.weather-part .temp .deg{
+  font-size: 40px;
+  display: block;
+  margin: 10px 5px 0 0;
+}
+
+.weather-part .weather{
+  font-size: 21px;
+  text-align: center;
+  margin: -5px 20px 15px;
+}
+
+.weather-part .time {
+  display: block; 
+  font-size: 16px; /* Adjust the font size as needed */
+  color: #333; /* Adjust the color as needed */
+  margin: 10px 0; /* Add some margin for spacing */
+  text-align: center; /* Center align the text */
+}
+Debu
+
+.weather-part .location{
+  display: flex;
+  font-size: 19px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+
+.location i{
+  font-size: 22px;
+  margin: 4px 5px 0 0;
+}
+
+.weather-part .bottom-details{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.bottom-details .column{
+  display: flex;
+  width: 100%;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.column i{
+  color: #014058;
+  font-size: 40px;
+}
+
+.column.humidity{
+  border-style: solid;
+  border-width: 15px;
+  border-color: transparent;
+}
+
+.column .details{
+  margin-left: 8px;
+}
+
+.details .temp, .humidity span{
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: -3px;
+}
+
+.details .temp .deg{
+  margin: 0;
+  font-size: 17px;
+  padding: 0 2px 0 1px;
+}
+
+.column .details p{
+  font-size: 14px;
+  margin-top: -6px;
+  text-align: left;
+}
+
+.humidity i{
+  font-size: 37px;
+}
+
+footer {
+  margin-top: 10px;
+  background-color: linear-gradient(0deg, rgba(244,244,244,1) 38%, rgba(232,232,232,0) 100%);
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}

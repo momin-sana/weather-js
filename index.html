@@ -1,0 +1,74 @@
+<!-- Made possible with Youtube help from Tyler_Potts and CodingNepal-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App - Sana Momin </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <a href="https://www.flaticon.com/free-icons/storm" title="storm icons">Storm icons created by kmg design - Flaticon</a>
+  </head>
+  <body id="weatherBody">
+    <div class="wrapper">
+      <header><i class='bx bx-left-arrow-alt'></i>Weather App</header>
+      <section class="input-part">
+        <p class="info-txt"></p>
+        <div class="content">
+          <input type="text" spellcheck="false" placeholder="Enter city name" required>
+          <div class="separator"></div>
+          <button>Get Device Location</button>
+        </div>
+        
+      </section>
+      <section class="weather-part">
+        <div class="unit-selection">
+          <input type="radio" id="fahrenheit" name="unit" value="imperial" checked>
+          <label for="fahrenheit">Fahrenheit</label> 
+          <input type="radio" id="celsius" name="unit" value="metric">
+          <label for="celsius">Celsius</label>
+         
+        </div>
+        <div class="time"></div></br>
+        <img src="/cloudy.png" alt="Weather Icon">
+        <div class="temp">
+          <span class="numb">54</span>
+          <span class="deg">°</span>
+        </div>
+        <div class="weather">Partly Cloudy</div>
+        <div class="location">
+          <i class='bx bx-map'></i>
+          <span>Chicago, Illinois</span>
+        </div></br>
+        <div class="bottom-details">
+          <div class="column feels">
+            <i class='bx bxs-thermometer'></i>
+            <div class="details">
+              <div class="temp">
+                <span class="numb-2">65</span>
+                <span class="deg">°</span>
+              </div>
+              <p>Feels like</p>
+            </div>
+          </div>
+          <div class="column humidity">
+            <i class='bx bxs-droplet-half'></i>
+            <div class="details">
+              <span>61%</span>
+              <p>Humidity</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <footer>
+      <p id="foot">
+        &copy; <span id="year"></span> Weather App by <b><i>Sana Momin </i></b> &hearts;
+      </p>
+  </footer>
+    <script src="script.js"></script>
+
+  </body>
+
+</html>

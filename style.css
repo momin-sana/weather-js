@@ -55,12 +55,14 @@ body{
   background: #fff;
   border-radius: 7px;
   border: 2mm ridge #209db39e;
-  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.334);
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.427);
   transition: box-shadow 0.3s ease;
 }
 
 .wrapper:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  transform: scale(1.05); 
+  box-shadow: 15px 15px 20px #0000007e; 
+  transition: box-shadow 0.3s ease;
 }
 
 .wrapper header{
@@ -338,7 +340,7 @@ Debu
 }
 
 footer {
-  margin-top: 10px;
+  margin-top: 15px;
   background-color: linear-gradient(0deg, rgba(244,244,244,1) 38%, rgba(232,232,232,0) 100%);
   color: #fff;
   padding: 10px 0;

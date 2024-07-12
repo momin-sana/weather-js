@@ -146,8 +146,7 @@ function weatherDetails(info){
         inputField.value = "";
         wrapper.classList.add("active");
 
-          // Ensure the temperature is displayed with the correct unit
-          if (currentUnit === "metric") {
+        if (currentUnit === "metric") {
             weatherPart.querySelectorAll(".temp .deg").forEach(deg => deg.innerText = "°C");
         } else {
             weatherPart.querySelectorAll(".temp .deg").forEach(deg => deg.innerText = "°F");

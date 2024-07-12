@@ -20,6 +20,8 @@ This Weather App allows users to check current weather conditions for a specific
 ## Live Demo
 
 You can view a live demo of this project [here](https://momin-sana.github.io/weather-js/).
+![Weather App](https://raw.githubusercontent.com/momin-sana/weather-js/main/COVER.png)
+An application to fetch and display weather information using JavaScript and external APIs.
 
 ## Getting Started
 
